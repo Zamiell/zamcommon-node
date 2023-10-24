@@ -1,0 +1,36 @@
+{
+  "name": "zamcommon-node",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/Zamiell/zamcommon-node",
+  "bugs": {
+    "url": "https://github.com/Zamiell/zamcommon-node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zamiell/zamcommon-node.git"
+  },
+  "license": "GPL-3.0",
+  "author": "Zamiell",
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "start": "yarn run build && node dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.8",
+    "isaacscript": "^3.16.0",
+    "isaacscript-lint": "^6.2.0",
+    "isaacscript-tsconfig": "^4.1.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "yarn@4.0.0"
+}
