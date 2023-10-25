@@ -8,9 +8,13 @@
   "compilerOptions": {
     "outDir": "./dist",
 
+    // @template-customization-start
+
     // Needed since this is a library.
     "declaration": true,
     "declarationMap": true,
+
+    // @template-customization-end
   },
 
   // A list of the TypeScript files to compile.
