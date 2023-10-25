@@ -7,7 +7,7 @@ import { findPackageRoot } from "@arktype/fs";
 import { capitalizeFirstLetter } from "isaacscript-common-ts";
 import path from "node:path";
 import type { Options } from "zx";
-import { getElapsedSeconds } from "./utils.js";
+import { getElapsedSeconds } from "./time.js";
 
 /** See the documentation for the `script` helper function. */
 export async function buildScript(
