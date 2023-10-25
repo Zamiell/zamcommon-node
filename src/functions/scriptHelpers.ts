@@ -44,10 +44,10 @@ export async function testScript(
  *
  * 1. Turn off verbosity in `zx` (so that the commands will not be echoed).
  * 2. Change directory to the package root.
- * 3. Print a script starting message (if there is not a quiet flag).
+ * 3. Print a script starting message (if a verb was provided and there is not a quiet flag).
  * 4. Run the provided logic.
- * 5. Print a script finishing message with the total amount of seconds taken (if there is not a
- *    quiet flag).
+ * 5. Print a script finishing message with the total amount of seconds taken (if a verb was
+ *    provided and there is not a quiet flag).
  *
  * @param $ The global variable from `zx`. (This is used to turn verbosity off.)
  * @param func The function that contains the build logic for the particular script.
