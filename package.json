@@ -33,7 +33,7 @@
     "zx": "^7.2.3"
   },
   "devDependencies": {
-    "@types/node": "^20.8.8",
+    "@types/node": "^20.8.9",
     "eslint-plugin-sort-exports": "^0.8.0",
     "isaacscript": "^3.16.0",
     "isaacscript-lint": "^6.2.0",
