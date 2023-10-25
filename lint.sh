@@ -32,4 +32,9 @@ npx cspell --no-progress --no-summary .
 # Check for unused CSpell words.
 npx cspell-check-unused-words
 
+# @template-customization-start
+# Check for base file updates.
+npx isaacscript check-ts --ignore "LICENSE"
+# @template-customization-end
+
 echo "Successfully linted $REPO_NAME in $SECONDS seconds."
