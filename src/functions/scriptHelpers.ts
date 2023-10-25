@@ -1,3 +1,5 @@
+/* eslint-disable sort-exports/sort-exports */
+
 // See: https://github.com/arktypeio/arktype/blob/beta/ark/fs/fs.ts
 // Useful functions:
 // - dirName

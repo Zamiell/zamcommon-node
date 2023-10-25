@@ -9,6 +9,13 @@ const config = {
     "eslint-config-isaacscript/base",
   ],
 
+  // @template-customization-start
+  plugins: [
+    /** The `sort-exports` rule is used in some specific files. */
+    "sort-exports",
+  ],
+  // @template-customization-end
+
   // Don't bother linting the compiled output.
   ignorePatterns: ["**/dist/**"],
 
@@ -22,6 +29,23 @@ const config = {
   rules: {
     // Insert changed or disabled rules here, if necessary.
   },
+
+  // @template-customization-start
+  overrides: [
+    {
+      files: ["./src/functions/**"],
+      rules: {
+        /** Not defined in the parent configs. */
+        "sort-exports/sort-exports": [
+          "error",
+          {
+            sortDir: "asc",
+          },
+        ],
+      },
+    },
+  ],
+  // @template-customization-end
 };
 
 module.exports = config;
