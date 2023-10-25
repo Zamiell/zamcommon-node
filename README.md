@@ -1,8 +1,6 @@
 # zamcommon-node
 
-`zamcommon-node` is a library with helper functions for TypeScript projects written in Node.js.
-
-This library is written in [TypeScript](https://www.typescriptlang.org/).
+`zamcommon-node` is a library with helper functions for Node.js projects written in [TypeScript](https://www.typescriptlang.org/).
 
 ## Documentation
 
