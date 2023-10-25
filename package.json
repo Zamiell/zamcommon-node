@@ -27,6 +27,10 @@
     "build": "rimraf dist && tsc",
     "start": "yarn run build && node dist/main.js"
   },
+  "dependencies": {
+    "isaacscript-common-ts": "^11.3.0",
+    "zx": "^7.2.3"
+  },
   "devDependencies": {
     "@types/node": "^20.8.8",
     "isaacscript": "^3.16.0",
