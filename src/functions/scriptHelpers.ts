@@ -49,7 +49,8 @@ export async function testScript(
  * 5. Print a script finishing message with the total amount of seconds taken (if a verb was
  *    provided and there is not a quiet flag).
  *
- * @param $ The global variable from `zx`. (This is used to turn verbosity off.)
+ * @param $ The global variable from `zx`, which is used to turn verbosity off. The dollar sign will
+ *        be present once you add: `import "zx/globals";`
  * @param func The function that contains the build logic for the particular script.
  * @param beforeVerb Optional. The verb for what the script will be doing. For example, "building".
  * @param afterVerb Optional. The verb for when the script completes. For exampled, "built".
