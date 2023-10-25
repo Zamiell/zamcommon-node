@@ -43,7 +43,7 @@ export async function testScript(
  * Specifically, this helper function will:
  *
  * 1. Turn off verbosity in `zx` (so that the commands will not be echoed).
- * 2. Change directory to the package root.
+ * 2. Change the working directory to the package root.
  * 3. Print a script starting message (if a verb was provided and there is not a quiet flag).
  * 4. Run the provided logic.
  * 5. Print a script finishing message with the total amount of seconds taken (if a verb was
