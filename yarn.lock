@@ -12,6 +12,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@arktype/fs@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@arktype/fs@npm:0.0.1"
+  checksum: 6af204b0ab74658fcd6d06a7f48d1f9b073e1c6db6273165bf818284ee92443b17f7f5d35fcea7acdc0ff2f825ec16e9761d0f9029e1af3a7c4694c12c579f11
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0":
   version: 7.22.13
   resolution: "@babel/code-frame@npm:7.22.13"
@@ -7195,6 +7202,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zamcommon-node@workspace:."
   dependencies:
+    "@arktype/fs": "npm:^0.0.1"
     "@types/node": "npm:^20.8.8"
     isaacscript: "npm:^3.16.0"
     isaacscript-common-ts: "npm:^11.3.0"
