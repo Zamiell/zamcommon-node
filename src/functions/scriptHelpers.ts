@@ -12,7 +12,7 @@ import { getElapsedSeconds } from "./utils.js";
 /** See the documentation for the `script` helper function. */
 export async function buildScript(
   $: Options,
-  func: () => Promise<void> | void,
+  func: (packageRoot: string) => Promise<void> | void,
 ): Promise<void> {
   await script($, func, "building", "built");
 }
@@ -20,7 +20,7 @@ export async function buildScript(
 /** See the documentation for the `script` helper function. */
 export async function lintScript(
   $: Options,
-  func: () => Promise<void> | void,
+  func: (packageRoot: string) => Promise<void> | void,
 ): Promise<void> {
   await script($, func, "linting", "linted");
 }
@@ -28,7 +28,7 @@ export async function lintScript(
 /** See the documentation for the `script` helper function. */
 export async function testScript(
   $: Options,
-  func: () => Promise<void> | void,
+  func: (packageRoot: string) => Promise<void> | void,
 ): Promise<void> {
   await script($, func, "testing", "tested");
 }
@@ -51,13 +51,15 @@ export async function testScript(
  *
  * @param $ The global variable from `zx`, which is used to turn verbosity off. The dollar sign will
  *        be present once you add: `import "zx/globals";`
- * @param func The function that contains the build logic for the particular script.
+ * @param func The function that contains the build logic for the particular script. This is passed
+ *             the path to the package root for convenience. (Before executing the function, the
+ *             current working directory will be changed to the package root.)
  * @param beforeVerb Optional. The verb for what the script will be doing. For example, "building".
  * @param afterVerb Optional. The verb for when the script completes. For exampled, "built".
  */
 export async function script(
   $: Options,
-  func: () => Promise<void> | void,
+  func: (packageRoot: string) => Promise<void> | void,
   beforeVerb?: string,
   afterVerb?: string,
 ): Promise<void> {
@@ -77,7 +79,7 @@ export async function script(
   process.chdir(packageRoot);
 
   const startTime = Date.now();
-  await func();
+  await func(packageRoot);
 
   if (!quiet && afterVerb !== undefined) {
     const elapsedSeconds = getElapsedSeconds(startTime);
