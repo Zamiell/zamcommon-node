@@ -20,10 +20,12 @@
     "dbaeumer",
     "esbenp",
     "isaacscript",
+    "knip",
     "loglevel",
-    "pnpm",
+    "packagejson",
     "sarisia",
     "technote",
+    "zamcommon",
     "Zamiell"
   ]
 }

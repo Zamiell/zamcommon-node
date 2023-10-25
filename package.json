@@ -16,6 +16,7 @@
   "type": "module",
   "files": [
     "dist",
+    "src",
     "LICENSE",
     "package.json",
     "README.md"
