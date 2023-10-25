@@ -16,30 +16,30 @@ const SCRIPT_TYPE_VERBS = {
 } as const satisfies Record<ScriptType, string>;
 
 /** See the documentation for the `script` helper function. */
-export function buildScript(
+export async function buildScript(
   $: Options,
   importMetaURL: string,
-  func: () => void,
-): void {
-  script($, importMetaURL, func, "build");
+  func: () => Promise<void>,
+): Promise<void> {
+  await script($, importMetaURL, func, "build");
 }
 
 /** See the documentation for the `script` helper function. */
-export function lintScript(
+export async function lintScript(
   $: Options,
   importMetaURL: string,
-  func: () => void,
-): void {
-  script($, importMetaURL, func, "lint");
+  func: () => Promise<void>,
+): Promise<void> {
+  await script($, importMetaURL, func, "lint");
 }
 
 /** See the documentation for the `script` helper function. */
-export function testScript(
+export async function testScript(
   $: Options,
   importMetaURL: string,
-  func: () => void,
-): void {
-  script($, importMetaURL, func, "test");
+  func: () => Promise<void>,
+): Promise<void> {
+  await script($, importMetaURL, func, "test");
 }
 
 /**
@@ -55,12 +55,12 @@ export function testScript(
  * @param func The function that contains the build logic for the particular script.
  * @param scriptType Optional. The kind of script. Omit this if you do not want logging.
  */
-export function script(
+export async function script(
   $: Options,
   importMetaURL: string,
-  func: () => void,
+  func: () => Promise<void>,
   scriptType?: ScriptType,
-): void {
+): Promise<void> {
   $.verbose = false; // eslint-disable-line no-param-reassign
 
   const args = process.argv.slice(2);
@@ -84,7 +84,7 @@ export function script(
   process.chdir(packageRoot);
 
   const startTime = Date.now();
-  func();
+  await func();
 
   if (!quiet && scriptType !== undefined) {
     const verb = SCRIPT_TYPE_VERBS[scriptType];
