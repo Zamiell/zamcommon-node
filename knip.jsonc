@@ -1,5 +1,14 @@
 {
   "$schema": "https://unpkg.com/knip/schema.json",
-  "ignore": [".eslintrc.cjs", "prettier.config.mjs"],
-  "ignoreDependencies": ["isaacscript", "isaacscript-lint"]
+  "eslint": true,
+  "prettier": true,
+  "ignoreDependencies": [
+    "eslint",
+    "eslint-config-isaacscript",
+    "isaacscript",
+    "isaacscript-lint",
+    "prettier",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-packagejson"
+  ]
 }
