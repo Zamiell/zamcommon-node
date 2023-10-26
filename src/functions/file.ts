@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { isObject } from "./isaacScriptCommonTS.js";
 
 /**
  * Helper function to get a "package.json" file as an object. This will throw an error if the
@@ -29,17 +30,13 @@ export function getPackageJSON(
   }
 
   const packageJSON = JSON.parse(filePath) as unknown;
-  if (
-    typeof packageJSON !== "object" ||
-    packageJSON === null ||
-    Array.isArray(packageJSON)
-  ) {
+  if (!isObject(packageJSON)) {
     throw new Error(
       `Failed to parse a "package.json" file at the following path: ${filePath}`,
     );
   }
 
-  return packageJSON as Record<string, unknown>;
+  return packageJSON;
 }
 
 /** Helper function to check if the provided path exists and is a directory. */
